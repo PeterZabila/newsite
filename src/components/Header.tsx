@@ -1,4 +1,5 @@
-import React, {  useEffect, useState} from 'react'
+import React, {  useEffect, useState} from 'react';
+import logo from '../assets/logo.png'
 
 const Header: React.FC = () => {
 const [background, setBackground] = useState('bg-transparent');
@@ -19,8 +20,8 @@ useEffect(() => {
 }, [])
 
   return (
-    <nav className={`pl-[15px] fixed top-0 left-0 w-full ${background} border-b-[1px] border-slate-100 flex flex-row`}>
-        <div className='mr-[5px]'>LOGO</div>
+    <nav className={`p-[15px] fixed top-0 left-0 w-full ${background} border-b-[1px] border-slate-200 border-opacity-20 flex flex-row`}>
+        <img src={logo} alt="logo" className='w-[80px] h-[30px] mr-[50px]' />
         <ul className='flex flex-row  text-slate-300'>
             <li className='mr-[5px]'>
                 Contacts
