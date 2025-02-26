@@ -1,35 +1,59 @@
 import './App.css';
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Catalogue from './components/Catalogue';
+import Home from './components/Home';
+import Gallery from './components/Gallery';
+import Contacts from './components/Contacts';
+import About from './components/About';
 // import Gallery from './components/Gallery';
 import Header from './components/Header';
-import Hero from './components/Hero';
 import Footer from './components/Footer';
 
-function App() {
 
-
+const Layout = () => {
   return (
     <>
-    <nav>
       <Header/>
-    </nav>
-    <Hero/>
-    <main>
-      <Catalogue/>
-      <h2 className="text-3xl font-bold text-orange-600">Hello</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, ipsam nulla. Eaque cum facilis, qui veritatis molestias consectetur ut, sapiente sed placeat enim voluptatibus, perferendis veniam voluptatum vero deserunt ratione.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At omnis dicta provident, minus doloremque esse id commodi placeat libero optio laboriosam itaque ullam quasi ad adipisci numquam quod voluptatem cumque?
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta fugit exercitationem reiciendis, molestias porro iure, consequatur sint deleniti tempora veritatis non dolore alias beatae, blanditiis velit consequuntur odit animi aspernatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero eum dolore quibusdam magni harum incidunt qui ex voluptates expedita eligendi, quis ratione consequatur quia totam rerum pariatur cupiditate nihil officiis?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis architecto, aspernatur odit corporis quasi nisi vero iure. Reiciendis odio repellendus, magni quos aspernatur harum. Consequuntur voluptates nobis a iure eaque.
-      </p>
+        <Outlet />
+      <Footer />
+    </>
+  );
+};
 
-      <div className='h-screen bg-gray-300'>
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
+      },
+      // {
+      //   path: "/tipic/:type",
+      //   element: <Product />,
+      // },
+      {
+        path: "/contact",
+        element: <Contacts />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
+  },
+]);
 
-      </div>
-    </main>
-    <Footer/>
-    
+
+function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
     </>
   )
 }
