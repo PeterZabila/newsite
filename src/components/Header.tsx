@@ -7,7 +7,6 @@ const [background, setBackground] = useState('bg-transparent');
 useEffect(() => {
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        
         if (scrollPosition > 500) {
             setBackground('bg-white');
         } else {
