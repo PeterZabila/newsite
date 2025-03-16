@@ -8,6 +8,7 @@ import About from './components/About';
 // import Gallery from './components/Gallery';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import NotFoundPage from './components/NotFoundPage';
 
 
 const Layout = () => {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/gallery",
+        path: "/gallery/:category",
         element: <Gallery />,
       },
       // {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "*",
+        element: <NotFoundPage/>
+      }
     ],
   },
 ]);

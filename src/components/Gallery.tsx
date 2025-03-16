@@ -1,9 +1,12 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
+import { useParams } from 'react-router-dom';
 import "react-image-gallery/styles/css/image-gallery.css";
 import Image from '../utils/types';
 
 const Gallery: React.FC = () => {
+
+  const { category } = useParams();
 
     const images: Image[] = [
         {
@@ -21,7 +24,8 @@ const Gallery: React.FC = () => {
       ];
 
   return (
-    <div>
+    <div className='py-[70px] z-0'>
+      <h2>{category}</h2>
       <ImageGallery items={images}/>
     </div>
   )
