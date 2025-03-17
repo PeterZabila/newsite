@@ -25,7 +25,9 @@ const Gallery: React.FC = () => {
 
   return (
     <div className='py-[70px] z-0'>
+
       <h2>{category}</h2>
+      
       <ImageGallery items={images}/>
     </div>
   )
