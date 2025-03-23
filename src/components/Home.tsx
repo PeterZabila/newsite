@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from './Hero';
 import Catalogue from './Catalogue';
 
 const Home: React.FC = () => {
+useEffect(() => {
+  window.scroll(0, 0)
+}, [])
+
   return (
     <main>
       <Hero/>
